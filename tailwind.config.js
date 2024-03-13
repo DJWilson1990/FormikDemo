@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const plugin = require("tailwindcss/plugin");
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,5 +17,11 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant("optional", "&:optional");
+      addVariant("hocus", ["&:hover", "&:focus"]);
+      addVariant("inverted-colors", "@media (inverted-colors: inverted)");
+    }),
+  ],
 };

@@ -27,6 +27,7 @@ const Basic = ({ initialValues }) => (
         }
         return errors;
       }}
+      // handle submit
       onSubmit={async (values, { setSubmitting }) => {
         await SaveForm(values);
         alert(JSON.stringify(values, null, 20));
@@ -50,7 +51,11 @@ const Basic = ({ initialValues }) => (
           <Field type="email" name="email" className="border my-4" />
           <ErrorMessage name="email" component="div" className="error" />
 
-          <button type="submit" disabled={isSubmitting} className="border">
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="border text-black hover:bg-black hover:text-white"
+          >
             Submit
           </button>
         </Form>

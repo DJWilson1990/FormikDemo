@@ -12,7 +12,7 @@ export default function FormReact({ initialValues }) {
   });
   //   set state for form errors
   const [emailError, setEmailError] = useState("");
-  //   validate form function
+  //   validate form
   function validateForm() {
     if (formData.email.length === 0) {
       setEmailError("Required");
@@ -89,7 +89,10 @@ export default function FormReact({ initialValues }) {
         <></>
       )}
 
-      <button type="submit" className="border">
+      <button
+        type="submit"
+        className="border text-black hover:bg-black hover:text-white"
+      >
         Submit
       </button>
     </form>
